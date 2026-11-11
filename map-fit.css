@@ -1,11 +1,19 @@
-/* Keep the complete illustrated map in the first desktop viewport. */
+/* Preserve the outpainted island and sea proportions on every screen. */
+.map {
+  background: #d7edf7 url("map-background-extended.jpg?v=mapedges20261111") center / 100% 100% no-repeat !important;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1860 / 845;
+}
 @media (min-width: 761px) {
   .map {
-    width: min(100%, calc(186.4svh - 391px));
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 1350 / 724;
+    width: min(100%, calc(220.1svh - 440px));
     margin-inline: auto;
-    background-size: 100% 100%;
+  }
+}
+@media (max-width: 760px) {
+  .map {
+    width: 100%;
+    margin-inline: auto;
   }
 }
