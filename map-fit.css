@@ -1,0 +1,11 @@
+/* Keep the complete illustrated map in the first desktop viewport. */
+@media (min-width: 761px) {
+  .map {
+    width: min(100%, calc(186.4svh - 391px));
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1350 / 724;
+    margin-inline: auto;
+    background-size: 100% 100%;
+  }
+}
