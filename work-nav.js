@@ -35,11 +35,19 @@
     wrapper.append(trigger, submenu);
     workLink.replaceWith(wrapper);
     const close = () => { submenu.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); };
+    const alignSubmenu = () => {
+      const header = wrapper.closest('.topbar');
+      if (header && window.matchMedia('(min-width: 761px)').matches) {
+        submenu.style.left = `${trigger.getBoundingClientRect().left - header.getBoundingClientRect().left}px`;
+      }
+    };
     trigger.addEventListener('click', () => {
+      alignSubmenu();
       const open = !submenu.classList.contains('open');
       submenu.classList.toggle('open', open);
       trigger.setAttribute('aria-expanded', String(open));
     });
+    window.addEventListener('resize', alignSubmenu);
     document.addEventListener('click', (event) => { if (!wrapper.contains(event.target)) close(); });
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { close(); trigger.focus(); } });
   }
