@@ -100,3 +100,5 @@ body{color:#704a34;background:#fff9f2}
 /* Keep map landmarks visually calm: no zoom, crop frame, or hover flash. */
 .map-hotspot::before{display:none!important;content:none!important}
 .map-hotspot:hover,.map-hotspot:focus-visible{z-index:3;background:transparent!important;outline:none!important;box-shadow:none!important}
+
+@media(min-width:600px) and (max-width:760px){.topbar{height:74px;padding:7px 16px;border-bottom-width:5px}.brand{gap:7px;font-size:clamp(16px,2.8vw,21px);letter-spacing:.035em}.brand-hamster{width:clamp(42px,6vw,52px)}.nav{display:flex;position:static;z-index:auto;top:auto;left:auto;right:auto;padding:0;background:transparent;border:0;flex-direction:row;align-items:center;justify-content:flex-end;gap:clamp(7px,1.2vw,12px);font-size:clamp(9px,1.25vw,11px);white-space:nowrap}.menu{display:none}}
