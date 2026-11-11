@@ -36,9 +36,10 @@
     workLink.replaceWith(wrapper);
     const close = () => { submenu.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); };
     const alignSubmenu = () => {
-      const header = wrapper.closest('.topbar');
-      if (header && window.matchMedia('(min-width: 761px)').matches) {
-        submenu.style.left = `${trigger.getBoundingClientRect().left - header.getBoundingClientRect().left}px`;
+      if (window.matchMedia('(min-width: 761px)').matches) {
+        const rect = trigger.getBoundingClientRect();
+        submenu.style.left = `${rect.left}px`;
+        submenu.style.top = `${rect.bottom + 8}px`;
       }
     };
     trigger.addEventListener('click', () => {
