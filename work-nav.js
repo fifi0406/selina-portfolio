@@ -36,10 +36,11 @@
     workLink.replaceWith(wrapper);
     const close = () => { submenu.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); };
     const alignSubmenu = () => {
-      if (window.matchMedia('(min-width: 761px)').matches) {
+      if (window.matchMedia('(min-width: 600px)').matches) {
         const rect = trigger.getBoundingClientRect();
         submenu.style.left = `${rect.left}px`;
-        submenu.style.top = '0px';
+        const headerRect = wrapper.closest('.topbar')?.getBoundingClientRect();
+        submenu.style.top = `${Math.max(rect.bottom, headerRect?.bottom || 0) + 8}px`;
       }
     };
     trigger.addEventListener('click', () => {
