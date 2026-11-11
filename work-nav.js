@@ -38,8 +38,9 @@
     const alignSubmenu = () => {
       if (window.matchMedia('(min-width: 761px)').matches) {
         const rect = trigger.getBoundingClientRect();
+        const headerRect = wrapper.closest('.topbar')?.getBoundingClientRect();
         submenu.style.left = `${rect.left}px`;
-        submenu.style.top = `${rect.bottom + 8}px`;
+        submenu.style.top = `${Math.max(rect.bottom, headerRect?.bottom || 0) + 8}px`;
       }
     };
     trigger.addEventListener('click', () => {
