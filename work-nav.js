@@ -1,4 +1,10 @@
 (() => {
+  const photographyLink = [...document.querySelectorAll('.nav a')].find((link) => {
+    const url = new URL(link.href, location.href);
+    return url.pathname.replace(/\/$/, '').endsWith('/photography.html');
+  });
+  if (photographyLink) photographyLink.remove();
+
   const workLink = [...document.querySelectorAll('.nav a')].find((link) => {
     const url = new URL(link.href, location.href);
     return url.pathname.replace(/\/$/, '').endsWith('/work.html');
