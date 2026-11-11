@@ -99,6 +99,9 @@ body{color:#704a34;background:#fff9f2}
 .resume-stop::before{background-size:434.78% 434.78%;background-position:96.32% 95.36%}
 }
 @media(prefers-reduced-motion:reduce){.map-hotspot::before{transition:none}}
+/* Keep map landmarks visually calm: no zoom, crop frame, or hover flash. */
+.map-hotspot::before{display:none!important;content:none!important}
+.map-hotspot:hover,.map-hotspot:focus-visible{z-index:3;background:transparent!important;outline:none!important;box-shadow:none!important}
 </style>
 </head>
 <body>
