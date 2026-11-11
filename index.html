@@ -31,4 +31,4 @@ document.querySelectorAll('.map-controls button').forEach(b=>b.addEventListener(
 map.addEventListener('click',e=>{if(e.target.closest('.map-hotspot,.map-controls'))return;const r=map.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;setPos(x,y,x<px?-1:1)});
 document.querySelectorAll('.map-hotspot').forEach(b=>b.addEventListener('click',()=>{const x=Number(b.dataset.x),y=Number(b.dataset.y);setPos(x,y,x<px?-1:1);message.textContent=b.dataset.title+' · Let’s explore';message.classList.add('show');setTimeout(()=>{message.classList.remove('show');window.location.assign(b.dataset.href)},650)}));
 const startPos=boundedPosition(px,py);px=startPos.x;py=startPos.y;traveler.style.left=px+'%';traveler.style.top=py+'%';
-</script><script src="work-nav.js?v=20261111d"></script></body></html>
+</script><script src="work-nav.js?v=20261111e"></script></body></html>
