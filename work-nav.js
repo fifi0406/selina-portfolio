@@ -51,7 +51,7 @@
     });
     window.addEventListener('resize', alignSubmenu);
     document.addEventListener('click', (event) => { if (!wrapper.contains(event.target)) close(); });
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { close(); trigger.focus(); } });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && submenu.classList.contains('open')) { close(); trigger.focus(); } });
   }
 
   const tools = document.querySelector('.work-tools');
